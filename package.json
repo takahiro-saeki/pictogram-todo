@@ -1,0 +1,32 @@
+{
+  "name": "pictogram-todo",
+  "version": "0.0.1",
+  "description": "this is just example of todo.",
+  "main": "index.js",
+  "repository": "https://github.com/takahiro-saeki/pictogram-todo.git",
+  "author": "takahiro-saeki",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "recompose": "^0.27.0",
+    "styled-components": "^3.2.6",
+    "uuid": "^3.2.1"
+  }
+}
