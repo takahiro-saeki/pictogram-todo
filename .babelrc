@@ -1,0 +1,35 @@
+{
+  "presets": [
+    "react",
+    ["env", {
+      "useBuiltIns": true,
+      "targets": {
+        "browsers": [
+          "ie >= 11"
+        ]
+      },
+      "modules": false,
+      "loose": true,
+    }]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  },
+  "ignore": [
+    "node_modules"
+  ],
+  "plugins": [,
+    "lodash",
+    "react-hot-loader/babel",
+    "transform-function-bind",
+    "transform-class-properties",
+    "syntax-dynamic-import",
+    "transform-object-rest-spread", [
+      "module-resolver", {
+        "root": ["./src/js"]
+      }
+    ]
+  ]
+}
