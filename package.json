@@ -54,6 +54,7 @@
   "main": "index.js",
   "repository": "https://github.com/takahiro-saeki/pictogram-todo.git",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --progress"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --progress",
+    "build": "cross-env NODE_ENV=production webpack --progress"
   }
 }
