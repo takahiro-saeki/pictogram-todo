@@ -1,5 +1,13 @@
 import React from 'react';
+import { Container, FormField } from './style';
 
-const Modal = () => <div>modal</div>;
+const Modal = () => (
+  <Container>
+    <FormField>
+      <textarea />
+      <button type="button">submit</button>
+    </FormField>
+  </Container>
+);
 
 export default Modal;
