@@ -4,9 +4,9 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import App from './containers/App';
-import reducer from './reducers';
-import baseStyle from './baseSetting/baseStyle';
+import 'baseSetting/baseStyle';
+import App from 'containers/App';
+import reducer from 'reducers';
 //import storage from './domain/storage';
 
 //storage.read() ? { todo: storage.read() } :

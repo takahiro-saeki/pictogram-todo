@@ -1,7 +1,5 @@
 import React from 'react';
 
-const RaisedButton = () => (
-  <button></button>
-);
+const RaisedButton = () => <button />;
 
 export default RaisedButton;

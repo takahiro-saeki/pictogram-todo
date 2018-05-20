@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Card = () => (
-  <div>test</div>
-);
+const Card = ({ memo }) => <div>{memo}</div>;
 
 export default Card;

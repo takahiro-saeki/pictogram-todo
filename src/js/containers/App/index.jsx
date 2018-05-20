@@ -1,10 +1,11 @@
 import React from 'react';
-import Header from '../../components/Header';
+import CardField from 'containers/CardField';
+import Header from 'components/Header';
 
 const App = () => (
   <div>
     <Header />
-    <div>app</div>
+    <CardField />
   </div>
 );
 
