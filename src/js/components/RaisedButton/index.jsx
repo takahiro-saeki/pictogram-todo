@@ -1,5 +1,11 @@
 import React from 'react';
 
-const RaisedButton = () => <button>make memo</button>;
+const RaisedButton = ({ onClick }) => (
+  <button onClick={onClick}>make memo</button>
+);
+
+RaisedButton.defaultProps = {
+  onClick: null
+};
 
 export default RaisedButton;
