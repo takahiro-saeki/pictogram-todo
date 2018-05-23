@@ -1,28 +1,35 @@
 {
   "presets": [
-    "react",
-    ["env", {
-      "useBuiltIns": true,
-      "targets": {
-        "browsers": [
-          "ie >= 11"
-        ]
-      },
-      "modules": false,
-      "loose": true,
-    }]
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "targets": {
+          "browsers": [
+            "ie >= 11"
+          ]
+        },
+        "modules": false,
+        "loose": true
+      }
+    ]
   ],
   "ignore": [
     "node_modules"
   ],
   "plugins": [
     "react-hot-loader/babel",
-    "transform-function-bind",
-    "transform-class-properties",
-    "syntax-dynamic-import",
-    "transform-object-rest-spread", [
-      "module-resolver", {
-        "root": ["./src/js"]
+    "@babel/plugin-proposal-function-bind",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-object-rest-spread",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src/js"
+        ]
       }
     ]
   ]

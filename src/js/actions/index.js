@@ -8,3 +8,10 @@ export const AddMemo = memo => ({
 export const toggleModal = () => ({
   type: 'TOGGLE_MODAL'
 });
+
+export const submitTodo = todo => ({
+  type: 'SUBMIT_TODO',
+  payload: {
+    todo
+  }
+});

@@ -4,10 +4,10 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import mock from 'mock';
 import Card from 'components/Card';
 
-const CardField = () => (
+const CardField = ({ data }) => (
   <Grid>
     <Row>
-      {mock.map(item => (
+      {data.map(item => (
         <Col key={v4()} xs={12} sm={6} md={4}>
           <Card memo={item.memo} />
         </Col>

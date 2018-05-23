@@ -6,16 +6,17 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
 
-const App = ({ toggle, toggleModal }) => (
+const App = ({ toggle, toggleModal, todo }) => (
   <div onClick={() => console.log('toggle', toggle)}>
     <Header />
-    <CardField />
+    <CardField data={todo} />
     <Modal isOpen={toggle} closeModal={toggleModal} />
   </div>
 );
 
 const mapStateToProps = state => ({
-  toggle: state.modal
+  toggle: state.modal,
+  todo: state.todo
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);

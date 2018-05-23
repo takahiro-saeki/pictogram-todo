@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
@@ -7,13 +6,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import 'baseSetting/baseStyle';
 import App from 'containers/App';
 import reducer from 'reducers';
+import mock from './mock';
 //import storage from './domain/storage';
 
 //storage.read() ? { todo: storage.read() } :
 
 const store = createStore(
   reducer,
-  {},
+  { todo: mock },
   process.env.NODE_ENV === 'production' ? undefined : composeWithDevTools()
 );
 
