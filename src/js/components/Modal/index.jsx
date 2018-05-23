@@ -11,8 +11,17 @@ export default class Modal extends Component {
   };
 
   handleChange = () => {
-    this.props.closeModal(this.state.value);
+    const { submitTodo, closeModal } = this.props;
+    const value = this.state.value;
+    const checkValue = value.trim();
+
+    if (!checkValue) {
+      return false;
+    }
+
     this.setState({ value: '' });
+    submitTodo(checkValue);
+    closeModal();
   };
 
   render() {

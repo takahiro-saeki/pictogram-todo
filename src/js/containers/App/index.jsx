@@ -6,11 +6,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
 
-const App = ({ toggle, toggleModal, todo }) => (
+const App = ({ toggle, toggleModal, todo, submitTodo, deleteTodo }) => (
   <div onClick={() => console.log('toggle', toggle)}>
     <Header />
-    <CardField data={todo} />
-    <Modal isOpen={toggle} closeModal={toggleModal} />
+    <CardField data={todo} deleteTodo={deleteTodo} />
+    <Modal isOpen={toggle} closeModal={toggleModal} submitTodo={submitTodo} />
   </div>
 );
 

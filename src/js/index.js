@@ -6,14 +6,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import 'baseSetting/baseStyle';
 import App from 'containers/App';
 import reducer from 'reducers';
+import storage from 'domain/storage';
 import mock from './mock';
-//import storage from './domain/storage';
-
-//storage.read() ? { todo: storage.read() } :
 
 const store = createStore(
   reducer,
-  { todo: mock },
+  storage.read() ? { todo: storage.read() } : mock,
   process.env.NODE_ENV === 'production' ? undefined : composeWithDevTools()
 );
 

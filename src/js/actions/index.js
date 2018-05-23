@@ -9,9 +9,16 @@ export const toggleModal = () => ({
   type: 'TOGGLE_MODAL'
 });
 
-export const submitTodo = todo => ({
+export const submitTodo = memo => ({
   type: 'SUBMIT_TODO',
   payload: {
-    todo
+    memo
+  }
+});
+
+export const deleteTodo = id => ({
+  type: 'DELETE_TODO',
+  payload: {
+    id
   }
 });
