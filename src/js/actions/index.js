@@ -22,3 +22,11 @@ export const deleteTodo = id => ({
     id
   }
 });
+
+export const editTodo = (id, memo) => ({
+  type: 'EDIT_TODO',
+  payload: {
+    memo,
+    id
+  }
+});

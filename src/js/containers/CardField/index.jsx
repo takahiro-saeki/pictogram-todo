@@ -5,13 +5,13 @@ import mock from 'mock';
 import Card from 'components/Card';
 import NoData from './style';
 
-const CardField = ({ data, deleteTodo }) => (
+const CardField = ({ data, deleteTodo, editTodo }) => (
   <Grid>
     {data.length ? (
       <Row>
         {data.map(item => (
           <Col key={v4()} xs={12} sm={6} md={4}>
-            <Card memo={item} deleteTodo={deleteTodo} />
+            <Card memo={item} deleteTodo={deleteTodo} editTodo={editTodo} />
           </Col>
         ))}
       </Row>

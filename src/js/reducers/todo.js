@@ -22,6 +22,19 @@ const todo = (state = [], action) => {
       const { id } = action.payload;
       return state.filter(item => id !== item.id);
     }
+    case 'EDIT_TODO': {
+      const { id, memo } = action.payload;
+      return state.map(item => {
+        if (id === item.id) {
+          const edit = {
+            ...item,
+            memo
+          };
+          return edit;
+        }
+        return item;
+      });
+    }
   }
   return state;
 };
