@@ -7,7 +7,7 @@ import 'baseSetting/baseStyle';
 import App from 'containers/App';
 import reducer from 'reducers';
 import storage from 'domain/storage';
-import mock from './mock';
+import mock from 'baseSetting/mock';
 
 const store = createStore(
   reducer,

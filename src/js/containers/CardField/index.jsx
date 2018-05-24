@@ -1,7 +1,6 @@
 import React from 'react';
 import { v4 } from 'uuid';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import mock from 'mock';
 import Card from 'components/Card';
 import NoData from './style';
 
