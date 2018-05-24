@@ -21,7 +21,19 @@ export const FormField = styled.form`
   width: 100%;
   max-width: 500px;
   height: 100%;
-  max-height: 500px;
+  max-height: 410px;
   background: #fff;
   border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 1rem;
+`;
+
+export const TextAreaField = styled.textarea`
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  height: 300px;
+  margin-bottom: 1rem;
 `;

@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Container, FormField } from './style';
+import RaisedButton from 'components/RaisedButton';
+import { Container, FormField, TextAreaField } from './style';
+
+const btnStyle = {
+  width: '100%'
+};
 
 export default class Modal extends Component {
   static defaultProps = {
@@ -33,10 +38,14 @@ export default class Modal extends Component {
     return (
       <Container onClick={closeModal}>
         <FormField onClick={e => e.stopPropagation()}>
-          <textarea onChange={e => this.setState({ value: e.target.value })} />
-          <button type="button" onClick={this.handleChange}>
-            submit
-          </button>
+          <TextAreaField
+            onChange={e => this.setState({ value: e.target.value })}
+          />
+          <RaisedButton
+            onClick={this.handleChange}
+            text="送信"
+            style={btnStyle}
+          />
         </FormField>
       </Container>
     );

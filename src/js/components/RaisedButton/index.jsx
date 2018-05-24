@@ -1,8 +1,10 @@
 import React from 'react';
 import WaveButton from './style';
 
-const RaisedButton = ({ onClick }) => (
-  <WaveButton onClick={onClick}>make memo</WaveButton>
+const RaisedButton = ({ onClick, text, style }) => (
+  <WaveButton type="button" onClick={onClick} style={style}>
+    {text}
+  </WaveButton>
 );
 
 RaisedButton.defaultProps = {

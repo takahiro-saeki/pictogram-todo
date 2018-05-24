@@ -1,5 +1,6 @@
 import { v4 } from 'uuid';
 import storage from 'domain/storage';
+import moment from 'moment';
 
 const todo = (state = [], action) => {
   switch (action.type) {
@@ -10,8 +11,7 @@ const todo = (state = [], action) => {
         {
           id: v4(),
           memo,
-          date: '',
-          finishDate: '',
+          date: moment().unix(),
           isChecked: false
         }
       ];
@@ -20,11 +20,13 @@ const todo = (state = [], action) => {
     }
     case 'DELETE_TODO': {
       const { id } = action.payload;
-      return state.filter(item => id !== item.id);
+      const deleteTodo = state.filter(item => id !== item.id);
+      storage.store(deleteTodo);
+      return deleteTodo;
     }
     case 'EDIT_TODO': {
       const { id, memo } = action.payload;
-      return state.map(item => {
+      const editTodo = state.map(item => {
         if (id === item.id) {
           const edit = {
             ...item,
@@ -34,10 +36,12 @@ const todo = (state = [], action) => {
         }
         return item;
       });
+      storage.store(editTodo);
+      return editTodo;
     }
     case 'TOGGLE_CHECK': {
       const { id } = action.payload;
-      return state.map(item => {
+      const toggleCheck = state.map(item => {
         if (id === item.id) {
           const check = {
             ...item,
@@ -47,6 +51,8 @@ const todo = (state = [], action) => {
         }
         return item;
       });
+      storage.store(toggleCheck);
+      return toggleCheck;
     }
   }
   return state;

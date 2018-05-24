@@ -4,8 +4,7 @@ import { Container, IconWrapper, TextWrap } from './style';
 
 const iconStyle = {
   color: 'red',
-  borderRadius: '50%',
-  border: '1px solid red'
+  fontSize: '1.8rem'
 };
 
 const inputStyle = {
@@ -15,6 +14,16 @@ const inputStyle = {
   boxSizing: 'border-box',
   borderRadius: '0.25rem',
   border: '1px solid #ccc'
+};
+
+const checkStyle = {
+  color: '#00bfa5',
+  fontSize: '1.8rem'
+};
+
+const defaultCheckStyle = {
+  color: '#CCC',
+  fontSize: '1.8rem'
 };
 
 export default class Card extends Component {
@@ -55,12 +64,24 @@ export default class Card extends Component {
         ) : (
           <Fragment>
             <IconWrapper>
-              <Icon name="check" onClick={() => toggleCheck(memo.id)} />
+              {memo.isChecked ? (
+                <Icon
+                  name="check_circle_outline"
+                  style={checkStyle}
+                  onClick={() => toggleCheck(memo.id)}
+                />
+              ) : (
+                <Icon
+                  name="check_circle"
+                  style={defaultCheckStyle}
+                  onClick={() => toggleCheck(memo.id)}
+                />
+              )}
             </IconWrapper>
             <TextWrap line={memo.isChecked}>{memo.memo}</TextWrap>
             <IconWrapper>
               <Icon
-                name="close"
+                name="cancel"
                 style={iconStyle}
                 onKeyDown={e => this.isEnter(e, memo.id)}
                 onClick={() => deleteTodo(memo.id)}

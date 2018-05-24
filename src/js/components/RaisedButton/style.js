@@ -13,6 +13,7 @@ const WaveButton = styled.button`
   outline: none;
   background-position: center;
   transition: background 0.8s;
+  width: 100px;
   &:hover {
     background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
       center/15000%;

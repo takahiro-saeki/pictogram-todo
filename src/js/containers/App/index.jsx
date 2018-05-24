@@ -19,7 +19,7 @@ const App = ({
   selectValue
 }) => (
   <div>
-    <Header select={select} selectValue={selectValue} />
+    <Header select={select} selectValue={selectValue} title="pictogram todo" />
     <CardField
       data={todo}
       deleteTodo={deleteTodo}
