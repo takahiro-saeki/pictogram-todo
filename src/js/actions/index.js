@@ -30,3 +30,17 @@ export const editTodo = (id, memo) => ({
     id
   }
 });
+
+export const toggleCheck = id => ({
+  type: 'TOGGLE_CHECK',
+  payload: {
+    id
+  }
+});
+
+export const selectValue = value => ({
+  type: 'SELECT_VALUE',
+  payload: {
+    value
+  }
+});

@@ -35,6 +35,19 @@ const todo = (state = [], action) => {
         return item;
       });
     }
+    case 'TOGGLE_CHECK': {
+      const { id } = action.payload;
+      return state.map(item => {
+        if (id === item.id) {
+          const check = {
+            ...item,
+            isChecked: !item.isChecked
+          };
+          return check;
+        }
+        return item;
+      });
+    }
   }
   return state;
 };

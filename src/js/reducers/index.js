@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import todo from './todo';
 import modal from './modal';
+import select from './select';
 
 const rootReducer = combineReducers({
   todo,
-  modal
+  modal,
+  select
 });
 
 export default rootReducer;

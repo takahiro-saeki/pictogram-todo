@@ -41,33 +41,33 @@ export default class Card extends Component {
   };
 
   render() {
-    const { memo, deleteTodo, editTodo } = this.props;
+    const { memo, deleteTodo, editTodo, toggleCheck } = this.props;
     const { isEdit } = this.state;
     return (
       <Container onDoubleClick={this.changeEdit}>
-        <IconWrapper>
-          <Icon name="check" />
-        </IconWrapper>
-        <TextWrap>
-          {isEdit ? (
-            <input
-              ref={node => (this.textInput = node)}
-              onBlur={this.changeEdit}
-              style={inputStyle}
-              onKeyDown={e => this.isEnter(e, memo.id)}
-            />
-          ) : (
-            memo.memo
-          )}
-        </TextWrap>
-        <IconWrapper>
-          <Icon
-            name="close"
-            style={iconStyle}
-            onKeyDown={e => this.isEnter(e, data.id)}
-            onClick={() => deleteTodo(memo.id)}
+        {isEdit ? (
+          <input
+            ref={node => (this.textInput = node)}
+            onBlur={this.changeEdit}
+            style={inputStyle}
+            onKeyDown={e => this.isEnter(e, memo.id)}
           />
-        </IconWrapper>
+        ) : (
+          <Fragment>
+            <IconWrapper>
+              <Icon name="check" onClick={() => toggleCheck(memo.id)} />
+            </IconWrapper>
+            <TextWrap line={memo.isChecked}>{memo.memo}</TextWrap>
+            <IconWrapper>
+              <Icon
+                name="close"
+                style={iconStyle}
+                onKeyDown={e => this.isEnter(e, memo.id)}
+                onClick={() => deleteTodo(memo.id)}
+              />
+            </IconWrapper>
+          </Fragment>
+        )}
       </Container>
     );
   }
