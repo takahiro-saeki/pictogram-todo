@@ -1,23 +1,23 @@
 const selectField = [
   {
-    title: '全てを表示',
-    type: 'all'
+    label: '全てを表示',
+    value: 'all'
   },
   {
-    title: 'アクティブを表示',
-    type: 'active'
+    label: 'アクティブを表示',
+    value: 'active'
   },
   {
-    title: 'チェック済みを表示',
-    type: 'completed'
+    label: 'チェック済みを表示',
+    value: 'completed'
   },
   {
-    title: '新しい順で表示',
-    type: 'new_todo'
+    label: '新しい順で表示',
+    value: 'new_todo'
   },
   {
-    title: '古い順で表示',
-    type: 'old_todo'
+    label: '古い順で表示',
+    value: 'old_todo'
   }
 ];
 

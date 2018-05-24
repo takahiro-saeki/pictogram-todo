@@ -1,5 +1,5 @@
 import React from 'react';
-import CardField from 'containers/CardField';
+import CardField from 'components/CardField';
 import Header from 'components/Header';
 import Modal from 'components/Modal';
 import { bindActionCreators } from 'redux';
@@ -19,7 +19,12 @@ const App = ({
   selectValue
 }) => (
   <div>
-    <Header select={select} selectValue={selectValue} title="pictogram todo" />
+    <Header
+      select={select}
+      selectValue={selectValue}
+      title="pictogram todo"
+      toggleModal={toggleModal}
+    />
     <CardField
       data={todo}
       deleteTodo={deleteTodo}
