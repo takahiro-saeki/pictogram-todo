@@ -2,6 +2,8 @@ import { v4 } from 'uuid';
 import storage from 'domain/storage';
 import moment from 'moment';
 
+moment.locale('ja');
+
 const todo = (state = [], action) => {
   switch (action.type) {
     case 'SUBMIT_TODO': {
@@ -11,7 +13,9 @@ const todo = (state = [], action) => {
         {
           id: v4(),
           memo,
-          date: moment().unix(),
+          date: moment().format('l'),
+          unix: moment().unix,
+          today: false,
           isChecked: false
         }
       ];
@@ -53,6 +57,21 @@ const todo = (state = [], action) => {
       });
       storage.store(toggleCheck);
       return toggleCheck;
+    }
+    case 'CHANGE_CHECKBOX': {
+      const { id } = action.payload;
+      const toggleCheckbox = state.map(item => {
+        if (id === item.id) {
+          const toggle = {
+            ...item,
+            today: !item.today
+          };
+          return toggle;
+        }
+        return item;
+      });
+      storage.store(toggleCheckbox);
+      return toggleCheckbox;
     }
   }
   return state;

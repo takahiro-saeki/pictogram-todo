@@ -1,10 +1,18 @@
+// @flow
+
 import React from 'react';
 import { v4 } from 'uuid';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import Card from 'components/Card';
 import NoData from './style';
 
-const CardField = ({ data, deleteTodo, editTodo, toggleCheck }) => (
+const CardField = ({
+  data,
+  deleteTodo,
+  editTodo,
+  toggleCheck,
+  changeCheckbox
+}) => (
   <Grid>
     {data.length ? (
       <Row>
@@ -15,6 +23,7 @@ const CardField = ({ data, deleteTodo, editTodo, toggleCheck }) => (
               deleteTodo={deleteTodo}
               editTodo={editTodo}
               toggleCheck={toggleCheck}
+              changeCheckbox={changeCheckbox}
             />
           </Col>
         ))}

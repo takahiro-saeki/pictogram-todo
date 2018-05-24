@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import RaisedButton from 'components/RaisedButton';
 import SelectField from 'components/SelectField';

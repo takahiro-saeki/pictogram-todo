@@ -6,17 +6,20 @@ const getTodos = state => state.todo;
 const getVisibleTodos = createSelector(
   [getVisibilityFilter, getTodos],
   (visibilityFilter, todos) => {
+    console.log('visibleTodos', { visibilityFilter, todos });
     switch (visibilityFilter) {
-      case 'all':
+      case 'ALL':
         return todos;
-      case 'active':
+      case 'ACTIVE':
         return todos.filter(t => !t.isChecked);
-      case 'completed':
+      case 'COMPLETED':
         return todos.filter(t => t.isChecked);
-      case 'new_todo':
-        return todos.sort((a, b) => b.date - a.date);
-      case 'old_todo':
-        return todos.sort((a, b) => a.date - b.date);
+      case 'NEW_TODO':
+        return todos.sort((a, b) => b.unix - a.unix);
+      case 'OLD_TODO':
+        return todos.sort((a, b) => a.unix - b.unix);
+      case 'TODAY_TODO':
+        return todos.filter(item => item.today);
     }
   }
 );

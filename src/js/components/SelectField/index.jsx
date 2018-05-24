@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import { v4 } from 'uuid';
 import Select from './style';

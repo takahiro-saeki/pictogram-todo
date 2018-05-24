@@ -16,7 +16,8 @@ const App = ({
   editTodo,
   toggleCheck,
   select,
-  selectValue
+  selectValue,
+  changeCheckbox
 }) => (
   <div>
     <Header
@@ -30,6 +31,7 @@ const App = ({
       deleteTodo={deleteTodo}
       editTodo={editTodo}
       toggleCheck={toggleCheck}
+      changeCheckbox={changeCheckbox}
     />
     <Modal isOpen={toggle} closeModal={toggleModal} submitTodo={submitTodo} />
   </div>

@@ -1,6 +1,6 @@
 const storage = {
-  store: data => sessionStorage.setItem('todo-data', JSON.stringify(data)),
-  read: () => JSON.parse(sessionStorage.getItem('todo-data'))
+  store: data => localStorage.setItem('todo-data', JSON.stringify(data)),
+  read: () => JSON.parse(localStorage.getItem('todo-data'))
 };
 
 export default storage;

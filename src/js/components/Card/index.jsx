@@ -6,7 +6,14 @@ import {
   checkStyle,
   defaultCheckStyle
 } from './inlineStyle';
-import { Container, IconWrapper, TextWrap } from './style';
+import {
+  Container,
+  IconWrapper,
+  TextWrap,
+  TopWrapper,
+  BottomWrapper,
+  AreaSeparator
+} from './style';
 
 export default class Card extends Component {
   state = {
@@ -32,10 +39,16 @@ export default class Card extends Component {
   };
 
   render() {
-    const { memo, deleteTodo, editTodo, toggleCheck } = this.props;
+    const {
+      memo,
+      deleteTodo,
+      editTodo,
+      toggleCheck,
+      changeCheckbox
+    } = this.props;
     const { isEdit } = this.state;
     return (
-      <Container onDoubleClick={this.changeEdit}>
+      <Container>
         {isEdit ? (
           <input
             ref={node => (this.textInput = node)}
@@ -45,30 +58,49 @@ export default class Card extends Component {
           />
         ) : (
           <Fragment>
-            <IconWrapper>
-              {memo.isChecked ? (
+            <TopWrapper onDoubleClick={this.changeEdit}>
+              <IconWrapper>
+                {memo.isChecked ? (
+                  <Icon
+                    name="check_circle"
+                    style={checkStyle}
+                    onClick={() => toggleCheck(memo.id)}
+                  />
+                ) : (
+                  <Icon
+                    name="check_circle_outline"
+                    style={defaultCheckStyle}
+                    onClick={() => toggleCheck(memo.id)}
+                  />
+                )}
+              </IconWrapper>
+              <TextWrap line={memo.isChecked}>{memo.memo}</TextWrap>
+              <IconWrapper>
                 <Icon
-                  name="check_circle_outline"
-                  style={checkStyle}
-                  onClick={() => toggleCheck(memo.id)}
+                  name="cancel"
+                  style={iconStyle}
+                  onKeyDown={e => this.isEnter(e, memo.id)}
+                  onClick={() => deleteTodo(memo.id)}
                 />
-              ) : (
-                <Icon
-                  name="check_circle"
-                  style={defaultCheckStyle}
-                  onClick={() => toggleCheck(memo.id)}
-                />
-              )}
-            </IconWrapper>
-            <TextWrap line={memo.isChecked}>{memo.memo}</TextWrap>
-            <IconWrapper>
-              <Icon
-                name="cancel"
-                style={iconStyle}
-                onKeyDown={e => this.isEnter(e, memo.id)}
-                onClick={() => deleteTodo(memo.id)}
-              />
-            </IconWrapper>
+              </IconWrapper>
+            </TopWrapper>
+            <BottomWrapper>
+              <AreaSeparator>
+                <label>
+                  <input
+                    name="today"
+                    type="checkbox"
+                    checked={memo.today}
+                    onChange={() => changeCheckbox(memo.id)}
+                  />
+                  <span>今日のタスク</span>
+                </label>
+              </AreaSeparator>
+              <AreaSeparator line>
+                <span>追加した日: </span>
+                <span>{memo.date}</span>
+              </AreaSeparator>
+            </BottomWrapper>
           </Fragment>
         )}
       </Container>

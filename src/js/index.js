@@ -11,7 +11,7 @@ import mock from 'baseSetting/mock';
 
 const store = createStore(
   reducer,
-  storage.read() ? { todo: storage.read() } : mock,
+  storage.read() ? { todo: storage.read() } : { todo: mock },
   process.env.NODE_ENV === 'production' ? undefined : composeWithDevTools()
 );
 

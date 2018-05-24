@@ -44,3 +44,10 @@ export const selectValue = value => ({
     value
   }
 });
+
+export const changeCheckbox = id => ({
+  type: 'CHANGE_CHECKBOX',
+  payload: {
+    id
+  }
+});
