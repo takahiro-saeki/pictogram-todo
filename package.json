@@ -64,6 +64,7 @@
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2",
+    "webpack-pwa-manifest": "^3.6.2",
     "webpackbar": "^2.6.1"
   },
   "license": "MIT",

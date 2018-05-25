@@ -5,6 +5,7 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const WebpackBar = require('webpackbar');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = Merge(common, {
   mode: 'production',
@@ -12,7 +13,7 @@ module.exports = Merge(common, {
   output: {
     filename: 'app.bundle.min.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: './'
   },
   plugins: [
     new FaviconsWebpackPlugin({
@@ -24,10 +25,22 @@ module.exports = Merge(common, {
     new HtmlWebpackPlugin({
       title: 'pictogram todo',
       template: path.join(__dirname, './src/index.ejs'),
-      faviconPath: '/icons/favicon.ico',
+      faviconPath: 'icons/favicon.ico',
       minify: {
         collapseWhitespace: true
       }
+    }),
+    new WebpackPwaManifest({
+      name: 'pictogram todo',
+      short_name: 'P-TODO',
+      description: 'this is one of the example app for me!',
+      background_color: '#ffffff',
+      icons: [
+        {
+          src: path.resolve('src/img/pic.png'),
+          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        }
+      ]
     }),
     new webpack.DefinePlugin({
       'process.env': {
