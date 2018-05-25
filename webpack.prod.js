@@ -49,7 +49,7 @@ module.exports = Merge(common, {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        development: "'development'"
+        development: "'production'"
       }
     }),
     new WebpackBar()
