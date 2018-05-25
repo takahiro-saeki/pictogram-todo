@@ -17,7 +17,8 @@ module.exports = Merge(common, {
   plugins: [
     new FaviconsWebpackPlugin({
       logo: './img/favicon.ico',
-      prefix: 'icons/'
+      prefix: 'icons/',
+      inject: true
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ja|it/),
     new HtmlWebpackPlugin({
