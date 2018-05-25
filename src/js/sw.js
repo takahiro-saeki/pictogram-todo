@@ -1,18 +1,11 @@
-var CACHE_NAME = 'cache-v1';
-var urlsToCache = [
-  '/',
-  '/index.html',
-  '/bundle.js',
-  '/material.min.css',
-  '/material.min.js',
-  '/favicon.ico'
-];
-
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      console.log('Opened cache');
-      return cache.addAll(urlsToCache);
-    })
-  );
+// service-worker.js
+self.addEventListener('install', function(e) {
+  console.log('[ServiceWorker] Install');
 });
+
+self.addEventListener('activate', function(e) {
+  console.log('[ServiceWorker] Activate');
+});
+
+// 現状では、この処理を書かないとService Workerが有効と判定されないようです
+self.addEventListener('fetch', function(event) {});
