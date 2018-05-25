@@ -8,6 +8,19 @@ import Header from 'components/Header';
 import Modal from 'components/Modal';
 import FixedFooter from 'components/FixedFooter';
 
+type Props = {
+  toggle: boolean,
+  toggleModal: Function,
+  todo: Array<Object>,
+  submitTodo: Function,
+  deleteTodo: Function,
+  editTodo: Function,
+  toggleCheck: Function,
+  select: string,
+  selectValue: Function,
+  changeCheckbox: Function
+};
+
 const App = ({
   toggle,
   toggleModal,
@@ -19,7 +32,7 @@ const App = ({
   select,
   selectValue,
   changeCheckbox
-}) => (
+}: Props) => (
   <div>
     <Header
       select={select}

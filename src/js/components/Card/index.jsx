@@ -53,13 +53,7 @@ export default class Card extends Component<Props, State> {
   };
 
   render() {
-    const {
-      memo,
-      deleteTodo,
-      editTodo,
-      toggleCheck,
-      changeCheckbox
-    } = this.props;
+    const { memo, deleteTodo, toggleCheck, changeCheckbox } = this.props;
     const { isEdit } = this.state;
     return (
       <Container>

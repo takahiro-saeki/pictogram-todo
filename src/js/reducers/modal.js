@@ -1,4 +1,6 @@
-const modal = (state = false, action) => {
+// @flow
+
+const modal = (state: boolean = false, action: {}) => {
   switch (action.type) {
     case 'TOGGLE_MODAL':
       return !state;

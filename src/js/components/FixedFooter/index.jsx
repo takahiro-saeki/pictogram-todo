@@ -1,5 +1,4 @@
 import React from 'react';
-import RaisedButton from 'components/RaisedButton';
 import SelectField from 'components/SelectField';
 import selectData from 'baseSetting/selectField';
 import { Footer, Field, FooterWrap, OpenModalArea } from './style';
@@ -11,7 +10,13 @@ const selectStyle = {
   outline: 0
 };
 
-const FixedFooter = ({ select, selectValue, toggleModal }) => (
+type Props = {
+  select: string,
+  selectValue: Function,
+  toggleModal: Function
+};
+
+const FixedFooter = ({ select, selectValue, toggleModal }: Props) => (
   <FooterWrap>
     <Footer>
       <Field>

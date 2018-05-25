@@ -38,17 +38,10 @@ module.exports = {
       },
     ],
     "comma-dangle": 0,
-    "import/no-extraneous-dependencies": 0,
     "react/default-props-match-prop-types": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "react/no-array-index-key": 0,
-    "react/display-name": 0,
-    "jsx-a11y/anchor-is-valid": 0,
-    "react/no-did-mount-set-state": 0,
-    "jsx-a11y/no-static-element-interactions": 0,
-    "react/forbid-prop-types": 1,
-    "react/jsx-filename-extension": 1,
-    "react/no-did-update-set-state": 0
+    "jsx-a11y/click-events-have-key-events": 1,
+    "jsx-a11y/no-static-element-interactions": 1,
+    "react/jsx-filename-extension": 1
   },
   "settings": {
     "import/resolver": {

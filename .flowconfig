@@ -13,6 +13,6 @@ esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
 esproposal.decorators=ignore
 
-module.system.node.resolve_dirname=src/js
+module.system.node.resolve_dirname=src
 
 suppress_comment= \\(.\\|\n\\)*\\$FlowIssue

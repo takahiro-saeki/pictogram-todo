@@ -4,7 +4,14 @@ import React from 'react';
 import { v4 } from 'uuid';
 import Select from './style';
 
-const SelectField = ({ data, select, selectValue, style }) => (
+type Props = {
+  data: Array<Object>,
+  select: string,
+  selectValue: Function,
+  style: {}
+};
+
+const SelectField = ({ data, select, selectValue, style }: Props) => (
   <Select
     onChange={e => selectValue(e.target.value)}
     value={select}
@@ -17,5 +24,12 @@ const SelectField = ({ data, select, selectValue, style }) => (
     ))}
   </Select>
 );
+
+SelectField.defaultProps = {
+  data: [],
+  select: '',
+  selectValue: null,
+  style: {}
+};
 
 export default SelectField;

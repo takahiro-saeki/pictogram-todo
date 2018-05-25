@@ -6,13 +6,21 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import Card from 'components/Card';
 import NoData from './style';
 
+type Props = {
+  data: Array<Object>,
+  deleteTodo: Function,
+  editTodo: Function,
+  toggleCheck: Function,
+  changeCheckbox: Function
+};
+
 const CardField = ({
   data,
   deleteTodo,
   editTodo,
   toggleCheck,
   changeCheckbox
-}) => (
+}: Props) => (
   <Grid fluid>
     {data.length ? (
       <Row>
@@ -33,5 +41,13 @@ const CardField = ({
     )}
   </Grid>
 );
+
+CardField.defaultProps = {
+  data: [],
+  deleteTodo: null,
+  editTodo: null,
+  toggleCheck: null,
+  changeCheckbox: null
+};
 
 export default CardField;

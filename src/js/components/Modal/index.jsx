@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import RaisedButton from 'components/RaisedButton';
 import ScrollLock from 'react-scrolllock';
@@ -13,7 +15,17 @@ const btnStyle = {
   width: '100%'
 };
 
-export default class Modal extends Component {
+type Props = {
+  submitTodo: Function,
+  closeModal: Function,
+  isOpen: boolean
+};
+
+type State = {
+  value: string
+};
+
+export default class Modal extends Component<Props, State> {
   static defaultProps = {
     isOpen: false
   };
@@ -24,7 +36,7 @@ export default class Modal extends Component {
 
   handleChange = () => {
     const { submitTodo, closeModal } = this.props;
-    const value = this.state.value;
+    const { value } = this.state;
     const checkValue = value.trim();
 
     if (!checkValue) {
@@ -37,7 +49,7 @@ export default class Modal extends Component {
   };
 
   render() {
-    const { isOpen, closeModal, formChange } = this.props;
+    const { isOpen, closeModal } = this.props;
 
     if (!isOpen) {
       return false;
