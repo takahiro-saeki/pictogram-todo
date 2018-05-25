@@ -38,10 +38,11 @@ module.exports = Merge(common, {
       short_name: 'P-TODO',
       description: 'this is one of the example app for me!',
       background_color: '#ffffff',
-      start_url: './',
+      start_url: './?utm_source=homescreen',
+      display: 'standalone',
       icons: [
         {
-          src: path.resolve('src/img/pic.png'),
+          src: path.resolve('src/img/pic.jpg'),
           sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
         }
       ]

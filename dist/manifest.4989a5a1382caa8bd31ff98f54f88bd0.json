@@ -1,0 +1,41 @@
+{
+  "icons": [
+    {
+      "src": "./icon_512x512.2538de5729b89a081365368bc893ea6d.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./icon_384x384.b85bdd81f0e5465e7f00026f0a1f5309.jpeg",
+      "sizes": "384x384",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./icon_256x256.d5bf63297ed8161287ea3233ef9bc0cb.jpeg",
+      "sizes": "256x256",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./icon_192x192.68aba49c62385d16e5c30f2838b6bbec.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./icon_128x128.4da8d0b96f6e481565f7b023618bd28f.jpeg",
+      "sizes": "128x128",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./icon_96x96.133af884831c0e703ebb2bb0deaeffcf.jpeg",
+      "sizes": "96x96",
+      "type": "image/jpeg"
+    }
+  ],
+  "name": "pictogram todo",
+  "short_name": "P-TODO",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./?utm_source=homescreen",
+  "description": "this is one of the example app for me!",
+  "background_color": "#ffffff"
+}
