@@ -18,12 +18,13 @@ module.exports = Merge(common, {
     new FaviconsWebpackPlugin({
       logo: './img/favicon.ico',
       prefix: 'icons/',
-      inject: true
+      inject: false
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ja|it/),
     new HtmlWebpackPlugin({
       title: 'pictogram todo',
       template: path.join(__dirname, './src/index.ejs'),
+      faviconPath: '/icons/favicon.ico',
       minify: {
         collapseWhitespace: true
       }

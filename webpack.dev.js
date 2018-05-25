@@ -34,6 +34,7 @@ module.exports = Merge(common, {
     new FaviconsWebpackPlugin('./img/favicon.ico'),
     new HtmlWebpackPlugin({
       title: 'kobo/genre page multiple',
+      favicon: './img/favicon.ico',
       template: path.join(__dirname, './src/index.ejs')
     }),
     new webpack.DefinePlugin({
