@@ -52,7 +52,6 @@ module.exports = Merge(common, {
         development: "'development'"
       }
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new WebpackBar()
   ]
 });
