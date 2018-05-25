@@ -6,15 +6,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = Merge(common, {
   mode: 'production',
-  entry: {
-    app: './js/index.js',
-    sw: './js/sw.js'
-  },
+  entry: './js/index.js',
   output: {
-    filename: '[name].js',
+    filename: 'app.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: './'
   },
@@ -48,6 +46,12 @@ module.exports = Merge(common, {
         }
       ]
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'sw.js'),
+        to: path.resolve(__dirname, 'dist/sw.js')
+      }
+    ]),
     new webpack.DefinePlugin({
       'process.env': {
         development: "'production'"

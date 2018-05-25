@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import 'baseSetting/baseStyle';
 import App from 'containers/App';
 import reducer from 'reducers';
 import storage from 'domain/storage';
