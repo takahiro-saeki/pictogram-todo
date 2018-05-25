@@ -15,7 +15,10 @@ module.exports = Merge(common, {
     publicPath: '/'
   },
   plugins: [
-    new FaviconsWebpackPlugin('./img/favicon.ico'),
+    new FaviconsWebpackPlugin({
+      logo: './img/favicon.ico',
+      prefix: 'icons/'
+    }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ja|it/),
     new HtmlWebpackPlugin({
       title: 'pictogram todo',

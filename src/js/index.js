@@ -8,6 +8,7 @@ import App from 'containers/App';
 import reducer from 'reducers';
 import storage from 'domain/storage';
 import mock from 'baseSetting/mock';
+import serviceWorker from 'baseSetting/serviceWorker';
 
 const store = createStore(
   reducer,
