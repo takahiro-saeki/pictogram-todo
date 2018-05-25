@@ -11,7 +11,14 @@ const btnStyle = {
   width: '180px'
 };
 
-const Header = ({ toggleModal, select, selectValue, title }) => (
+type Props = {
+  toggleModal: Function,
+  select: string,
+  selectValue: Function,
+  title: string
+};
+
+const Header = ({ toggleModal, select, selectValue, title }: Props) => (
   <HeaderContainer>
     <HeaderMaxWidth>
       <EnvHelper>
