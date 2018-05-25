@@ -35,6 +35,7 @@ module.exports = Merge(common, {
       short_name: 'P-TODO',
       description: 'this is one of the example app for me!',
       background_color: '#ffffff',
+      start_url: './',
       icons: [
         {
           src: path.resolve('src/img/pic.png'),
