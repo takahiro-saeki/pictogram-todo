@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component, Fragment } from 'react';
 import Icon from 'components/Icon';
 import {
@@ -15,7 +17,19 @@ import {
   AreaSeparator
 } from './style';
 
-export default class Card extends Component {
+type Props = {
+  memo: {},
+  deleteTodo: Function,
+  editTodo: Function,
+  toggleCheck: Function,
+  changeCheckbox: Function
+};
+
+type State = {
+  isEdit: boolean
+};
+
+export default class Card extends Component<Props, State> {
   state = {
     isEdit: false
   };
@@ -32,10 +46,10 @@ export default class Card extends Component {
 
   isEnter = (e, id) => {
     if (e.which === 13) {
-      this.props.editTodo(id, e.target.value);
-      return this.changeEdit();
+      const { editTodo } = this.props;
+      editTodo(id, e.target.value);
+      this.changeEdit();
     }
-    this.setState({ text: e.target.value });
   };
 
   render() {
@@ -86,8 +100,9 @@ export default class Card extends Component {
             </TopWrapper>
             <BottomWrapper>
               <AreaSeparator>
-                <label>
+                <label htmlFor="today-task">
                   <input
+                    id="today-task"
                     name="today"
                     type="checkbox"
                     checked={memo.today}
