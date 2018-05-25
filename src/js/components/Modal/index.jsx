@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RaisedButton from 'components/RaisedButton';
-import { Container, FormField, TextAreaField } from './style';
+import { Container, FormField, TextAreaField, ModalHeader } from './style';
 
 const btnStyle = {
   width: '100%'
@@ -38,6 +38,7 @@ export default class Modal extends Component {
     return (
       <Container onClick={closeModal}>
         <FormField onClick={e => e.stopPropagation()}>
+          <ModalHeader>TODOを入力してください</ModalHeader>
           <TextAreaField
             onChange={e => this.setState({ value: e.target.value })}
           />

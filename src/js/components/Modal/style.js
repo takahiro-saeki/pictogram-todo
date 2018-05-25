@@ -21,7 +21,7 @@ export const FormField = styled.form`
   width: 100%;
   max-width: 500px;
   height: 100%;
-  max-height: 410px;
+  max-height: 340px;
   background: #fff;
   border-radius: 0.5rem;
   box-sizing: border-box;
@@ -34,6 +34,14 @@ export const TextAreaField = styled.textarea`
   padding: 0.5rem;
   box-sizing: border-box;
   border-radius: 0.5rem;
-  height: 300px;
+  height: 200px;
   margin-bottom: 1rem;
+  font-size: 1rem;
+`;
+
+export const ModalHeader = styled.h2`
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  color: #616161;
 `;

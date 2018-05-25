@@ -1,11 +1,12 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from 'actions';
+import selectors from 'selectors';
 import CardField from 'components/CardField';
 import Header from 'components/Header';
 import Modal from 'components/Modal';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import selectors from 'selectors';
-import * as actions from 'actions';
+import FixedFooter from 'components/FixedFooter';
 
 const App = ({
   toggle,
@@ -34,6 +35,7 @@ const App = ({
       changeCheckbox={changeCheckbox}
     />
     <Modal isOpen={toggle} closeModal={toggleModal} submitTodo={submitTodo} />
+    <FixedFooter select={select} selectValue={selectValue} />
   </div>
 );
 

@@ -13,7 +13,7 @@ const CardField = ({
   toggleCheck,
   changeCheckbox
 }) => (
-  <Grid>
+  <Grid fluid>
     {data.length ? (
       <Row>
         {data.map(item => (
