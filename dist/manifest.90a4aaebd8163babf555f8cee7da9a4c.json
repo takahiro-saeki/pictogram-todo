@@ -37,5 +37,6 @@
   "display": "standalone",
   "start_url": "./?utm_source=homescreen",
   "description": "this is one of the example app for me!",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "theme_color": "#FFF"
 }

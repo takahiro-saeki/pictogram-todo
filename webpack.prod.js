@@ -40,6 +40,7 @@ module.exports = Merge(common, {
       background_color: '#ffffff',
       start_url: './?utm_source=homescreen',
       display: 'standalone',
+      theme_color: '#FFF',
       icons: [
         {
           src: path.resolve('src/img/pic.jpg'),

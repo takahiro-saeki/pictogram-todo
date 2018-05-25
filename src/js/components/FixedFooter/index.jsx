@@ -7,7 +7,8 @@ import { Footer, Field, FooterWrap, OpenModalArea } from './style';
 const selectStyle = {
   width: '100%',
   height: '100%',
-  border: 'none'
+  border: 'none',
+  outline: 0
 };
 
 const FixedFooter = ({ select, selectValue, toggleModal }) => (
