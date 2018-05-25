@@ -6,6 +6,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
+  margin-bottom: 1rem;
 `;
 
 export const HeaderMaxWidth = styled.div`

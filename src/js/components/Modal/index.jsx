@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import RaisedButton from 'components/RaisedButton';
-import { Container, FormField, TextAreaField, ModalHeader } from './style';
+import ScrollLock from 'react-scrolllock';
+import {
+  Container,
+  FormField,
+  TextAreaField,
+  ModalHeader,
+  FormMainField
+} from './style';
 
 const btnStyle = {
   width: '100%'
@@ -38,16 +45,19 @@ export default class Modal extends Component {
     return (
       <Container onClick={closeModal}>
         <FormField onClick={e => e.stopPropagation()}>
-          <ModalHeader>TODOを入力してください</ModalHeader>
-          <TextAreaField
-            onChange={e => this.setState({ value: e.target.value })}
-          />
-          <RaisedButton
-            onClick={this.handleChange}
-            text="送信"
-            style={btnStyle}
-          />
+          <FormMainField>
+            <ModalHeader>TODOを入力してください</ModalHeader>
+            <TextAreaField
+              onChange={e => this.setState({ value: e.target.value })}
+            />
+            <RaisedButton
+              onClick={this.handleChange}
+              text="送信"
+              style={btnStyle}
+            />
+          </FormMainField>
         </FormField>
+        <ScrollLock />
       </Container>
     );
   }

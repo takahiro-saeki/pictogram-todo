@@ -44,10 +44,13 @@ export const BottomWrapper = styled.div`
 
 export const AreaSeparator = styled.div`
   width: 50%;
+  display: flex;
+  align-items: center;
   ${props =>
     props.line &&
     css`
       border-left: 1px solid #ccc;
       padding-left: 0.5rem;
+      display: block;
     `};
 `;

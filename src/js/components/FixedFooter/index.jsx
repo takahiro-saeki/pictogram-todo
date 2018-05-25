@@ -2,15 +2,15 @@ import React from 'react';
 import RaisedButton from 'components/RaisedButton';
 import SelectField from 'components/SelectField';
 import selectData from 'baseSetting/selectField';
-import { Footer, Field, FooterWrap } from './style';
+import { Footer, Field, FooterWrap, OpenModalArea } from './style';
 
 const selectStyle = {
   width: '100%',
   height: '100%',
-  borderRadius: 0
+  border: 'none'
 };
 
-const FixedFooter = ({ select, selectValue }) => (
+const FixedFooter = ({ select, selectValue, toggleModal }) => (
   <FooterWrap>
     <Footer>
       <Field>
@@ -22,7 +22,7 @@ const FixedFooter = ({ select, selectValue }) => (
         />
       </Field>
       <Field>
-        <RaisedButton text="TODOを作成する" />
+        <OpenModalArea onClick={toggleModal}>TODOを作成する</OpenModalArea>
       </Field>
     </Footer>
   </FooterWrap>

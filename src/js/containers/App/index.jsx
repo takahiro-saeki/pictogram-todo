@@ -35,7 +35,11 @@ const App = ({
       changeCheckbox={changeCheckbox}
     />
     <Modal isOpen={toggle} closeModal={toggleModal} submitTodo={submitTodo} />
-    <FixedFooter select={select} selectValue={selectValue} />
+    <FixedFooter
+      select={select}
+      selectValue={selectValue}
+      toggleModal={toggleModal}
+    />
   </div>
 );
 

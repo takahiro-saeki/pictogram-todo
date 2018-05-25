@@ -22,9 +22,13 @@ export const FormField = styled.form`
   max-width: 500px;
   height: 100%;
   max-height: 340px;
-  background: #fff;
   border-radius: 0.5rem;
   box-sizing: border-box;
+  padding: 1rem;
+`;
+
+export const FormMainField = styled.div`
+  background: #fff;
   padding: 1rem;
 `;
 
