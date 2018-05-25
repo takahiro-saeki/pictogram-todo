@@ -9,9 +9,12 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = Merge(common, {
   mode: 'production',
-  entry: './js/index.js',
+  entry: {
+    app: './js/index.js',
+    sw: './js/sw.js'
+  },
   output: {
-    filename: 'app.bundle.min.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: './'
   },
