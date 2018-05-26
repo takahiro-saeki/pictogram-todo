@@ -8,6 +8,8 @@ import reducer from 'reducers';
 import storage from 'domain/storage';
 import mock from 'baseSetting/mock';
 
+document.body.style.margin = 0;
+
 const store = createStore(
   reducer,
   storage.read() ? { todo: storage.read() } : { todo: mock },
