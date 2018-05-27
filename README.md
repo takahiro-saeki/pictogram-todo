@@ -1,5 +1,4 @@
 # pictogram-todo
-this is todo example by using pictogram.
+TODO example アプリケーション
 
-example
-https://takahiro-saeki.github.io/pictogram-todo/dist/index.html
+[example app](https://takahiro-saeki.github.io/pictogram-todo/dist/index.html)
